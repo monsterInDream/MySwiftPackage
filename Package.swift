@@ -37,10 +37,10 @@ let package = Package(
             dependencies: ["Alamofire"],
             //5.3.源代码的相对路径,相当于cocopods中的source_files
             //SPM 默认会在 Sources/TargetName/ 下寻找代码
-            path: "Sources",
+            path: "Sources/MySwiftPackage",
             //5.4.资源文件相对路径（图片、JSON、Bundle）
             resources: [
-                //(1).这里的 "Assets" 相对路径是基于 path 目录
+                //(1).这里的 "Assets" 相对路径是基于path 目录，// 现在 SPM 会在 `Sources/MySwiftPackage/Assets` 找到资源
                 //(2).在Sources目录下创建目录Assets，将所有资源文件(静态资源文件)放到新建的目录Assets下
                 //(3).默认方式：.process("Assets")，SMP处理并优化资源（适用于JSON，图片等）。
                 //.copy("Assets")，原封不动拷贝到Bundle资源里面
